@@ -11,7 +11,11 @@
 
 ## 🧩 Background
 
-As part of the onboarding process for a new internal monitoring tool, MasterTech’s infrastructure team has asked you to organize and prepare a working directory on a Linux server. This will involve understanding file types, creating and editing configuration files, organizing scripts and logs, and applying the correct permissions and ownership.
+As part of the onboarding process for a new internal monitoring tool,
+MasterTech’s infrastructure team has asked you to organize and prepare
+a working directory on a Linux server. This will involve understanding
+file types, creating and editing configuration files,
+organizing scripts and logs, and applying the correct permissions and ownership.
 
 ---
 
