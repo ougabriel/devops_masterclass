@@ -1,1 +1,43 @@
+At the end of your **Linux Directories** lesson, your learners should be able to confidently:
+
+---
+
+### ✅ **Learning Outcomes**
+
+1. **Explain the Linux File System Hierarchy**
+
+   * Understand the purpose of the root `/` directory
+   * Describe the role of important directories like `/home`, `/etc`, `/var`, `/bin`, and `/tmp`
+
+2. **Navigate the File System from the Terminal**
+
+   * Use commands like `cd`, `ls`, `pwd` to move through directories
+   * Differentiate between absolute and relative paths
+
+3. **Create, Move, and Organize Directories**
+
+   * Use `mkdir`, `rmdir`, and `rm -r` to manage directories
+   * Create nested directories with `mkdir -p`
+
+4. **Manipulate Files Within Directories**
+
+   * Create files using `touch`, view with `cat`, `less`, and move/copy using `mv` and `cp`
+
+5. **Understand and Modify File Permissions**
+
+   * Read and interpret `ls -l` output (permissions, ownership, size, timestamps)
+   * Change permissions with `chmod` and ownership with `chown`
+
+6. **Visualize Directory Structures**
+
+   * Use `tree` to understand and explain directory layouts
+
+7. **Apply Knowledge in a Practical Scenario**
+
+   * Build and manage a custom file system layout
+   * Understand the practical significance of organizing files and directories properly in DevOps and Linux system administration
+
+---
+
+
 
