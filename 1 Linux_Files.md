@@ -1,4 +1,4 @@
-Sure! Here's the **GitHub-friendly Markdown version** of your DevOps task scenario — cleanly formatted and ready for a `README.md` or documentation file:
+
 
 ````markdown
 # 🧾 DevOps Task Scenario — MasterTech Incorporated
@@ -40,7 +40,7 @@ file /bin/ls
 file setup.sh
 ````
 
-* * *
+---
 
 ### ✅ 2. Create File Templates Using `touch`
 
@@ -52,16 +52,13 @@ cd /opt/mastertech/setup/
 touch deploy.sh config.cfg error.log notes.txt
 ```
 
-* * *
+---
 
 ### ✅ 3. Edit Files Using CLI Tools
 
-* *   Use `nano` or `vim` to insert content into `config.cfg`
-*     
-* *   Use `echo` to populate `notes.txt`
-*     
-* *   Use `cat` to view contents of any file
-*     
+* Use `nano` or `vim` to insert content into `config.cfg`
+* Use `echo` to populate `notes.txt`
+* Use `cat` to view contents of any file
 
 ```bash
 nano config.cfg
@@ -69,7 +66,7 @@ echo "Initial setup notes for monitoring tool." > notes.txt
 cat notes.txt
 ```
 
-* * *
+---
 
 ### ✅ 4. Navigate Through the File System
 
@@ -79,7 +76,7 @@ pwd
 ls -l
 ```
 
-* * *
+---
 
 ### ✅ 5. Copy, Move, Rename, and Delete Files
 
@@ -89,7 +86,7 @@ mv error.log logs.log
 rm /tmp/notes_backup.txt
 ```
 
-* * *
+---
 
 ### ✅ 6. Change File Permissions
 
@@ -105,7 +102,7 @@ Make `config.cfg` readable only by the owner:
 chmod 600 config.cfg
 ```
 
-* * *
+---
 
 ### ✅ 7. Change Ownership of Files
 
@@ -115,7 +112,7 @@ Assume the deployment files should belong to the `devops` user:
 sudo chown devops:devops deploy.sh config.cfg
 ```
 
-* * *
+---
 
 ### ✅ 8. View Hidden Files and System Files
 
@@ -131,7 +128,7 @@ Edit `.bashrc` or view `.profile`:
 nano ~/.bashrc
 ```
 
-* * *
+---
 
 ### ✅ 9. Check File Types Again
 
@@ -140,37 +137,22 @@ file deploy.sh
 file config.cfg
 ```
 
-* * *
+---
 
 ## 📁 Deliverables
 
-* *   Directory: `/opt/mastertech/setup/`
-*     
-* *   Files: `deploy.sh`, `config.cfg`, `logs.log`, `notes.txt`
-*     
-* *   Permissions: `deploy.sh` should be executable, `config.cfg` should be owner-readable only
-*     
-* *   Ownership: All files owned by `devops:devops`
-*     
+* Directory: `/opt/mastertech/setup/`
+* Files: `deploy.sh`, `config.cfg`, `logs.log`, `notes.txt`
+* Permissions: `deploy.sh` should be executable, `config.cfg` should be owner-readable only
+* Ownership: All files owned by `devops:devops`
 
-* * *
+---
 
 ## ✅ Success Criteria
 
-* *   All files created and organized correctly
-*     
-* *   Permissions and ownership follow MasterTech’s security policy
-*     
-* *   Able to navigate, edit, and manage files via CLI without GUI
-*     
+* All files created and organized correctly
+* Permissions and ownership follow MasterTech’s security policy
+* Able to navigate, edit, and manage files via CLI without GUI
 
-* * *
+---
 
-_Let me know if you need this exported as a PDF, turned into a Trello card, or adapted for Jira or GitHub Issues._
-
-```
-
-Would you like me to generate this as a downloadable PDF too?
-```
-
-Paste your rich text content here. You can paste directly from Word or other rich text sources.
