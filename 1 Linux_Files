@@ -1,164 +1,119 @@
-Sure! Here's the **GitHub-friendly Markdown version** of your DevOps task scenario — cleanly formatted and ready for a `README.md` or documentation file:
+Here’s a realistic **DevOps task scenario** based on your topics, tailored for someone working at **MasterTech Incorporated** — perhaps as a Junior DevOps Engineer or Systems Administrator.
 
-````markdown
-# 🧾 DevOps Task Scenario — MasterTech Incorporated
+🧾 **DevOps Task Scenario — MasterTech Incorporated**
+-----------------------------------------------------
 
-## 🏢 Company: MasterTech Incorporated  
-## 🛠 Role: Junior DevOps Engineer  
-## 📌 Task Title: Initial File System Setup and Configuration Audit
+### 🏢 Company: MasterTech Incorporated
 
----
+### 🛠 Role: Junior DevOps Engineer
 
-## 🧩 Background
+### 📌 Task Title: Initial File System Setup and Configuration Audit
+
+### 🧩 **Background**
 
 As part of the onboarding process for a new internal monitoring tool, MasterTech’s infrastructure team has asked you to organize and prepare a working directory on a Linux server. This will involve understanding file types, creating and editing configuration files, organizing scripts and logs, and applying the correct permissions and ownership.
 
----
-
-## 🎯 Objective
+### 🎯 **Objective**
 
 You are tasked with setting up a configuration directory on a Linux server that will:
 
-- Contain various file types (scripts, logs, config)  
-- Be properly owned and permissioned  
-- Support easy navigation and future automation
+*   Contain various file types (scripts, logs, config)
+    
+*   Be properly owned and permissioned
+    
+*   Support easy navigation and future automation
+    
 
----
+### 📋 **Task Checklist**
 
-## 📋 Task Checklist
+#### ✅ 1. Understand File Types
 
-### ✅ 1. Understand File Types
+*   Use the file command to identify:
+    
+    *   Binary files
+        
+    *   Text files
+        
+    *   Shell scripts
+        
 
-Use the `file` command to identify:
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   file /bin/ls  file setup.sh   `
 
-- Binary files  
-- Text files  
-- Shell scripts  
+#### ✅ 2. Create File Templates Using touch
 
-```bash
-file /bin/ls
-file setup.sh
-````
+Create the following files inside /opt/mastertech/setup/:
 
----
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   mkdir -p /opt/mastertech/setup/  cd /opt/mastertech/setup/  touch deploy.sh config.cfg error.log notes.txt   `
 
-### ✅ 2. Create File Templates Using `touch`
+#### ✅ 3. Edit Files Using CLI Tools
 
-Create the following files inside `/opt/mastertech/setup/`:
+*   Use nano or vim to insert content into config.cfg
+    
+*   Use echo to populate notes.txt
+    
+*   Use cat to view contents of any file
+    
 
-```bash
-mkdir -p /opt/mastertech/setup/
-cd /opt/mastertech/setup/
-touch deploy.sh config.cfg error.log notes.txt
-```
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   nano config.cfg  echo "Initial setup notes for monitoring tool." > notes.txt  cat notes.txt   `
 
----
+#### ✅ 4. Navigate Through the File System
 
-### ✅ 3. Edit Files Using CLI Tools
+Practice:
 
-* Use `nano` or `vim` to insert content into `config.cfg`
-* Use `echo` to populate `notes.txt`
-* Use `cat` to view contents of any file
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   cd /opt/mastertech/setup/  pwd  ls -l   `
 
-```bash
-nano config.cfg
-echo "Initial setup notes for monitoring tool." > notes.txt
-cat notes.txt
-```
+#### ✅ 5. Copy, Move, Rename, and Delete Files
 
----
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   cp notes.txt /tmp/notes_backup.txt  mv error.log logs.log  rm /tmp/notes_backup.txt   `
 
-### ✅ 4. Navigate Through the File System
+#### ✅ 6. Change File Permissions
 
-```bash
-cd /opt/mastertech/setup/
-pwd
-ls -l
-```
+Set deploy.sh as executable:
 
----
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   chmod +x deploy.sh   `
 
-### ✅ 5. Copy, Move, Rename, and Delete Files
+Make config.cfg readable only by the owner:
 
-```bash
-cp notes.txt /tmp/notes_backup.txt
-mv error.log logs.log
-rm /tmp/notes_backup.txt
-```
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   chmod 600 config.cfg   `
 
----
+#### ✅ 7. Change Ownership of Files
 
-### ✅ 6. Change File Permissions
+Assume the deployment files should belong to the devops user:
 
-Make `deploy.sh` executable:
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   sudo chown devops:devops deploy.sh config.cfg   `
 
-```bash
-chmod +x deploy.sh
-```
+#### ✅ 8. View Hidden Files and System Files
 
-Make `config.cfg` readable only by the owner:
+Check home directory:
 
-```bash
-chmod 600 config.cfg
-```
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   ls -a ~   `
 
----
+Edit .bashrc or view .profile:
 
-### ✅ 7. Change Ownership of Files
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   nano ~/.bashrc   `
 
-Assume the deployment files should belong to the `devops` user:
+#### ✅ 9. Check File Types
 
-```bash
-sudo chown devops:devops deploy.sh config.cfg
-```
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   file deploy.sh  file config.cfg   `
 
----
+### 📁 Deliverables
 
-### ✅ 8. View Hidden Files and System Files
+*   Directory: /opt/mastertech/setup/
+    
+*   Files: deploy.sh, config.cfg, logs.log, notes.txt
+    
+*   Permissions: deploy.sh executable, config.cfg owner-readable
+    
+*   Ownership: All files owned by devops:devops
+    
 
-Check your home directory:
+### ✅ Success Criteria
 
-```bash
-ls -a ~
-```
+*   All files created and organized correctly
+    
+*   Permissions and ownership follow MasterTech’s security policy
+    
+*   Able to navigate, edit, and manage files via CLI without GUI
+    
 
-Edit `.bashrc` or view `.profile`:
-
-```bash
-nano ~/.bashrc
-```
-
----
-
-### ✅ 9. Check File Types Again
-
-```bash
-file deploy.sh
-file config.cfg
-```
-
----
-
-## 📁 Deliverables
-
-* Directory: `/opt/mastertech/setup/`
-* Files: `deploy.sh`, `config.cfg`, `logs.log`, `notes.txt`
-* Permissions: `deploy.sh` should be executable, `config.cfg` should be owner-readable only
-* Ownership: All files owned by `devops:devops`
-
----
-
-## ✅ Success Criteria
-
-* All files created and organized correctly
-* Permissions and ownership follow MasterTech’s security policy
-* Able to navigate, edit, and manage files via CLI without GUI
-
----
-
-*Let me know if you need this exported as a PDF, turned into a Trello card, or adapted for Jira or GitHub Issues.*
-
-```
-
-Would you like me to generate this as a downloadable PDF too?
-```
+Let me know if you’d like a **PDF task sheet**, **Trello card format**, or a version for **Jira/Ticketing system** to fit your workflow.
