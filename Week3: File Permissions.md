@@ -17,6 +17,10 @@ Understanding file permissions is essential for secure and effective Linux syste
 
 
 * * * * *
+![image](https://github.com/user-attachments/assets/fbee2011-b4a1-4b25-bc1e-f87399fa6c6f)
+
+
+##
 
 ### **1\. Viewing File Permissions**
 
