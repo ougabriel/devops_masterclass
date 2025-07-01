@@ -7,6 +7,9 @@
 
 Understanding file permissions is essential for secure and effective Linux system administration. This guide explains ownership, permission modes, and how to modify them step by step.
 
+![image](https://github.com/user-attachments/assets/aab2c0ef-592f-4d1e-9a96-1bf30e4fe302)
+
+
 * * * * *
 
 ### **1\. Viewing File Permissions**
@@ -15,6 +18,7 @@ Understanding file permissions is essential for secure and effective Linux syste
 ls -l
 
 ```
+
 
 Example output:
 
@@ -34,7 +38,13 @@ Example output:
 
 * * * * *
 
+![image](https://github.com/user-attachments/assets/d01b9000-311d-4e99-a703-265c083f6839)
+
+
 ### **2\. Understanding Permission Values**
+
+![image](https://github.com/user-attachments/assets/7f0069b9-4959-4279-81d8-c5d43b0e460e)
+
 
 | Symbol | Meaning | Value |
 | --- | --- | --- |
@@ -84,6 +94,9 @@ Sets:
 * * * * *
 
 ### **4\. Symbolic Mode with `chmod`**
+
+![image](https://github.com/user-attachments/assets/b10043d0-2228-4d63-9692-8af193afbbea)
+
 
 ```
 chmod u+x script.sh       # Add execute permission to the owner
