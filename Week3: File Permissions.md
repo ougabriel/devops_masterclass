@@ -199,7 +199,7 @@ Discussion:
 
 ### **Scenario:**
 
-You are a junior system administrator at a company called **CodeLab**. Your team is working on a shared project stored in `/project-data`. You are tasked with creating files, setting permissions, and ensuring secure access for different team members.
+You are a junior system administrator at a company called **Gabs-Mastertech**. Your team is working on a shared project stored in `/project-data`. You are tasked with creating files, setting permissions, and ensuring secure access for different team members.
 
 * * * * *
 
