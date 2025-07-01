@@ -17,10 +17,7 @@ Understanding file permissions is essential for secure and effective Linux syste
 
 
 * * * * *
-![image](https://github.com/user-attachments/assets/fbee2011-b4a1-4b25-bc1e-f87399fa6c6f)
 
-
-##
 
 ### **1\. Viewing File Permissions**
 
@@ -36,6 +33,9 @@ Example output:
 -rw-r--r-- 1 user group  0 Jun 28 12:00 myfile.txt
 
 ```
+
+![image](https://github.com/user-attachments/assets/fbee2011-b4a1-4b25-bc1e-f87399fa6c6f)
+
 
 #### Breakdown of `-rw-r--r--`:
 
