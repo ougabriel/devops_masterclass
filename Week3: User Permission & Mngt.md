@@ -1,5 +1,107 @@
 
 
+* * * * *
+
+**User Permissions and Management in Linux**
+--------------------------------------------
+
+### **Overview**
+
+Linux is a multi-user operating system that manages access and control through a well-defined **user and group permission system**. Understanding how users are created, grouped, and granted specific access to files and directories is essential for maintaining system security and resource organization.
+
+* * * * *
+
+### **User Management**
+
+-   **Users** represent individual accounts on the system. Each user has a **unique username** and **user ID (UID)**.
+
+-   **User accounts** can be created using `useradd` or `adduser`, modified with `usermod`, and removed using `userdel`.
+
+-   Users can be assigned to one or more **groups**, which help define shared permissions across multiple accounts.
+
+----
+![USERS, GROUPS, AND PERMISSIONS IN LINUX | by perfectogo | Medium](https://miro.medium.com/v2/resize:fit:1200/1*pI94lVONL4p54Lh3icTz6g.png)
+
+
+#### Common User Management Commands:
+
+```
+useradd john              # Create a new user
+passwd john               # Set a password for the user
+usermod -aG groupname john  # Add user to an existing group
+deluser john              # Delete a user account
+
+```
+
+* * * * *
+
+### **Group Management**
+
+-   A **group** is a collection of users that share the same access rights.
+
+-   Groups help manage permissions for files, directories, and system resources more efficiently.
+
+-   You can create a group with `groupadd`, and users can be added using `usermod` or directly via `/etc/group`.
+
+* * * * *
+
+### **File Permissions**
+
+Linux files and directories are assigned three types of permissions for three categories of users:
+
+| Category | Description |
+| --- | --- |
+| Owner | The user who owns the file |
+| Group | The group assigned to the file |
+| Others | All other users |
+
+Each can have the following permissions:
+
+| Permission | Symbol | Description |
+| --- | --- | --- |
+| Read | `r` | View file contents or list directory |
+| Write | `w` | Modify file contents or directory |
+| Execute | `x` | Run the file or enter a directory |
+
+Permissions can be viewed using `ls -l` and modified using `chmod`, `chown`, or `chgrp`.
+
+* * * * *
+
+### **Example:**
+
+```
+-rw-r--r-- 1 john developers 1234 Jan 1 12:00 file.txt
+
+```
+
+-   `john` is the owner.
+
+-   `developers` is the group.
+
+-   Permissions: owner can read/write, group can read, others can read.
+
+* * * * *
+
+### **Conclusion**
+
+Proper user and permission management ensures that system resources are secure and only accessible to authorized users. It is a foundational skill for system administrators and anyone managing a Linux environment such as Devops Engineers.
+
+* * * * *
+
+
+
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+
 🎯 **Scenario: Setting up a New Developer Team on a Shared Linux System**
 -------------------------------------------------------------------------
 
