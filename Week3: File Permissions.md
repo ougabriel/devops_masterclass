@@ -6,6 +6,9 @@
 ----------------------------------------------------
 
 Understanding file permissions is essential for secure and effective Linux system administration. This guide explains ownership, permission modes, and how to modify them step by step.
+![image](https://github.com/user-attachments/assets/e371deb0-9bd2-4825-a6c4-4b50914dfa16)
+
+* * * * *
 
 ![image](https://github.com/user-attachments/assets/aab2c0ef-592f-4d1e-9a96-1bf30e4fe302)
 
