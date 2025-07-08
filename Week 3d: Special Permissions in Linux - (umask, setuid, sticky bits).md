@@ -1,234 +1,229 @@
 
 ---
 
-# 🧑‍🏫 **Teaching Plan for Beginners: Linux File Permissions, Special Bits & ACLs**
+# Teaching Plan for Beginners: Linux File Permissions, Special Bits & ACLs
 
 ---
 
-## 🔹 **2.5: Symbolic Permissions (Letter-Based)**
+## 2.5: Symbolic Permissions (Letter-Based)
 
-### 📝 **Short Note:**
+### Short Note:
 
-Linux uses **permissions** to control who can **read**, **write**, or **execute** a file or directory. Symbolic permissions use letters:
+Linux permissions control who can read, write, or execute a file or directory. There are three entities:
+
+* User (u): the file owner
+* Group (g): users in the file's group
+* Others (o): all other users
+
+Permission types:
 
 * `r` = read
 * `w` = write
 * `x` = execute
 
-Each file has permissions for:
-
-* **User (u)** – the file owner
-* **Group (g)** – the assigned user group
-* **Others (o)** – everyone else
-
 ---
 
-### ✅ **Command 1: Create Nested Directories**
+### Command 1: Create Nested Directories
 
 ```bash
 mkdir -p parent/child
 ```
 
-**Explanation:**
-
-* `mkdir` creates directories.
-* `-p` makes all required parent directories, if they don’t exist.
+Explanation:
+Creates both the parent and child directories in one step. The `-p` flag makes parent directories if they don’t exist.
 
 ---
 
-### ✅ **Command 2: Secure File (Owner Read-Only)**
+### Command 2: Secure File (Owner Read-Only)
 
 ```bash
 chmod 400 password.txt
 ```
 
-**Explanation:**
-
-* `chmod` changes file permissions.
-* `400` = owner can read (`r`), group/others have no access.
-* Useful for securing sensitive files.
+Explanation:
+Gives read-only permission to the owner. Group and others have no access. Good for securing sensitive files.
 
 ---
 
-### ✅ **Command 3: Change Group Ownership**
+### Command 3: Change Group Ownership
 
 ```bash
 chgrp itdept password.txt
 ```
 
-**Explanation:**
-
-* `chgrp` changes the group owner of a file.
-* Useful when files need to be accessed by team members in a shared group.
+Explanation:
+Assigns the file to the `itdept` group so users in that group can work with it.
 
 ---
 
-## 🔹 **2.6: Special Permissions**
+## 2.6: Special Permissions
 
-### 📝 **Short Note:**
+### Short Note:
 
-In addition to the standard `rwx` permissions, Linux has **three special permission bits** that give extra behavior:
+Linux includes three special permission bits:
 
-1. **SetUID (Set User ID):** Run executable files as the **file owner**.
-2. **SetGID (Set Group ID):**
-
-   * On files: Run as the **file group**.
-   * On directories: New files inherit the **parent’s group**.
-3. **Sticky Bit:** Only the **file owner** can delete their files in shared folders.
+| Special Bit | Symbol | Octal | Applies To  | Purpose                                               |
+| ----------- | ------ | ----- | ----------- | ----------------------------------------------------- |
+| SetUID      | `s`    | `4`   | Files       | Run file with the **owner’s** permissions             |
+| SetGID      | `s`    | `2`   | Files/Dirs  | Files: run with group privileges; Dirs: inherit group |
+| Sticky Bit  | `t`    | `1`   | Directories | Only file owners can delete their own files           |
 
 ---
 
-### ✅ **Command 4: SetUID – Run as File Owner**
+### Command 4: SetUID – Run as File Owner
+
+Add SetUID:
 
 ```bash
-chmod 4755 script.sh
+chmod 4755 script.sh        # numeric
+chmod u+s script.sh         # symbolic
 ```
 
-**Explanation:**
-
-* `4` enables the SetUID bit.
-* When another user runs this file, it runs with the **file owner's permissions**.
-* You’ll see `s` instead of `x` for the owner in `ls -l`.
-
----
-
-### ✅ **Command 5: SetGID – Run or Inherit Group Ownership**
+Remove SetUID:
 
 ```bash
-chmod 2755 sharedscript.sh         # SetGID on file
-chmod 2775 /project/sharedfolder   # SetGID on directory
+chmod 0755 script.sh        # numeric
+chmod u-s script.sh         # symbolic
 ```
 
-**Explanation:**
-
-* `2` enables the SetGID bit.
-* On **files**: Executed as the **file group owner**, not the user’s group.
-* On **directories**: New files created inside **inherit the group** of the folder (not the creator’s default group).
-* This promotes consistent **group collaboration**.
+Explanation:
+When executed, the file runs with the **owner’s permissions**, regardless of who runs it.
 
 ---
 
-### ✅ **Command 6: Sticky Bit – For Shared Directories**
+### Command 5: SetGID – Group Ownership Inheritance
+
+Add SetGID:
 
 ```bash
-chmod +t /shared/dir
+chmod 2755 script.sh             # numeric
+chmod g+s script.sh              # symbolic
+
+chmod 2775 /project/shared       # directory example
+chmod g+s /project/shared
 ```
 
-**Explanation:**
+Remove SetGID:
 
-* The `+t` flag sets the Sticky Bit.
-* Only **the file’s owner** can delete or rename their files in the directory.
-* Commonly used in public folders like `/tmp`.
+```bash
+chmod 0755 script.sh             # numeric
+chmod g-s script.sh              # symbolic
+```
+
+Explanation:
+
+* On files: executed with the file's group privileges.
+* On directories: new files created inherit the directory’s group.
 
 ---
 
-### ✅ **Command 7: Set Default Permissions with umask**
+### Command 6: Sticky Bit – Shared Directory Protection
+
+Add Sticky Bit:
+
+```bash
+chmod 1777 /shared/dir           # numeric
+chmod +t /shared/dir             # symbolic
+```
+
+Remove Sticky Bit:
+
+```bash
+chmod 0777 /shared/dir           # numeric
+chmod -t /shared/dir             # symbolic
+```
+
+Explanation:
+Prevents users from deleting or renaming each other’s files in shared directories. Common in `/tmp`.
+
+---
+
+### Command 7: Set Default Permissions with umask
 
 ```bash
 umask 027
 ```
 
-**Explanation:**
+Explanation:
+Controls the default permissions for newly created files and directories:
 
-* `umask` controls **default permissions** for new files and directories.
-* `027` means:
-
-  * Owner gets full access (`rwx`)
-  * Group gets read/execute
-  * Others get no access
+* Owner: full access
+* Group: read/execute
+* Others: no access
 
 ---
 
-## 🔹 **2.7: Manage ACLs (Access Control Lists)**
+## 2.7: Manage ACLs (Access Control Lists)
 
-### 📝 **Short Note:**
+### Short Note:
 
-Linux ACLs allow you to assign **fine-grained permissions** beyond the basic owner/group/others model. You can give **specific users or groups** custom read, write, or execute access.
+ACLs provide more flexibility than traditional permissions by allowing specific users or groups to have individual access rules.
 
 ---
 
-### ✅ **Command 8: Set ACL**
+### Command 8: Set ACL
 
 ```bash
 setfacl -m u:username:r file.txt
 ```
 
-**Explanation:**
-
-* `setfacl` sets ACL permissions.
-* `-m` modifies the ACL.
-* This command gives `username` **read-only** access to `file.txt`.
+Explanation:
+Grants read access to a specific user even if they aren’t the owner or in the file’s group.
 
 ---
 
-### ✅ **Command 9: View ACL**
+### Command 9: View ACL
 
 ```bash
 getfacl file.txt
 ```
 
-**Explanation:**
-
-* `getfacl` shows the full ACL permission list.
-* Useful to verify what users or groups have access to a file.
+Explanation:
+Displays all ACL entries for the file, showing who has what level of access.
 
 ---
 
-## 📌 **Quick Summary Table**
+## Summary Table
 
-| Concept                 | Command                        | Short Note                             |
-| ----------------------- | ------------------------------ | -------------------------------------- |
-| Create nested folders   | `mkdir -p parent/child`        | Make parent & child folders in one go  |
-| Secure file (read-only) | `chmod 400 file.txt`           | Only owner can read; others blocked    |
-| Change group            | `chgrp itdept file.txt`        | Assign file to `itdept` group          |
-| **SetUID**              | `chmod 4755 script.sh`         | File runs with **owner's privileges**  |
-| **SetGID (file)**       | `chmod 2755 sharedscript.sh`   | File runs with **group privileges**    |
-| **SetGID (directory)**  | `chmod 2775 /shared/dir`       | New files inherit **group**            |
-| **Sticky Bit**          | `chmod +t /shared/dir`         | Only file owner can delete their files |
-| Set default permissions | `umask 027`                    | Controls new file/dir access           |
-| Set ACL                 | `setfacl -m u:user:r file.txt` | Grant specific user access             |
-| View ACL                | `getfacl file.txt`             | Show extended permissions              |
+| Concept            | Add (Numeric) | Add (Symbolic)        | Remove (Symbolic) | Description                       |
+| ------------------ | ------------- | --------------------- | ----------------- | --------------------------------- |
+| SetUID             | `chmod 4755`  | `chmod u+s`           | `chmod u-s`       | File runs as owner                |
+| SetGID (file)      | `chmod 2755`  | `chmod g+s`           | `chmod g-s`       | File runs as group                |
+| SetGID (directory) | `chmod 2775`  | `chmod g+s`           | `chmod g-s`       | New files inherit group           |
+| Sticky Bit         | `chmod 1777`  | `chmod +t`            | `chmod -t`        | Only owner can delete their files |
+| Default file perms | `umask 027`   | —                     | —                 | Secure defaults for new files     |
+| Set ACL            | —             | `setfacl -m u:user:r` | —                 | Allow specific user access        |
+| View ACL           | —             | `getfacl file`        | —                 | Show ACL rules                    |
 
 ---
 
-## 📘 **Bonus: Permission Numbers Explained**
+## Permission Numbers Reference
 
-Each permission is represented by a number:
-
-* `r` = 4
-* `w` = 2
-* `x` = 1
-
-So:
-
-* `7` = `rwx`
-* `6` = `rw-`
-* `5` = `r-x`
-* `4` = `r--`
-* `0` = `---`
+| Number | Meaning |
+| ------ | ------- |
+| 7      | rwx     |
+| 6      | rw-     |
+| 5      | r-x     |
+| 4      | r--     |
+| 0      | ---     |
 
 ---
 
-## 🧮 **Understanding umask (How Defaults Work)**
+## Understanding umask: File and Directory Defaults
 
-| Type        | Base Permission   | Affected by umask |
-| ----------- | ----------------- | ----------------- |
-| Files       | `666` (rw-rw-rw-) | Yes               |
-| Directories | `777` (rwxrwxrwx) | Yes               |
+| Item      | Default Perm    | With umask 027 | Final Permission |
+| --------- | --------------- | -------------- | ---------------- |
+| File      | 666 (rw-rw-rw-) | 027            | 640 (rw-r-----)  |
+| Directory | 777 (rwxrwxrwx) | 027            | 750 (rwxr-x---)  |
 
-**Example:**
+Example:
 
 ```bash
 umask 027
-touch file.txt
-mkdir dir
-ls -l file.txt dir
+touch newfile
+mkdir newdir
+ls -l newfile newdir
 ```
-
-### umask 027 Calculation:
-
-* File: `666 - 027 = 640` → `rw-r-----`
-* Dir:  `777 - 027 = 750` → `rwxr-x---`
 
 ---
 
