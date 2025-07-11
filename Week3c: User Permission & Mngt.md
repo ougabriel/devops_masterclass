@@ -262,31 +262,11 @@ sudo usermod -g devteam alice
 
 * * * * *
 
-### 🌐 **2.3: Use External Authentication Service (LDAP)**
-
-#### ✅ **Task**: Integrate system with LDAP (for enterprise login)
-
-1.  **Launch GUI auth config (if available)**
-
-```
-sudo authconfig-gtk
-
-```
-
-1.  **Configure LDAP**
-
--   Set LDAP server, base DN, enable LDAP authentication.
-
-1.  **Verify with LDAP user (e.g., `ldapuser`)**
-
-```
-su - ldapuser
-
-```
+#
 
 * * * * *
 
-### 🧾 **2.4: Numeric Permissions**
+### 🧾 **2.3: Numeric Permissions**
 
 #### ✅ **Task**: Create a script and secure it.
 
