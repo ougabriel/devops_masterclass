@@ -105,9 +105,18 @@ Proper user and permission management ensures that system resources are secure a
 🎯 **Scenario: Setting up a New Developer Team on a Shared Linux System**
 -------------------------------------------------------------------------
 
-You are a DevOps Admin. Your task is to onboard a new developer (`alice`), 
-assign her to the right group (`devteam`), set up permissions and security policies, 
-and ensure everything is correctly managed.
+You are a DevOps Administrator. Your task is to onboard a new developer (alice) by performing the following:
+
+Create the user account for alice.
+
+Add her to the appropriate group (devteam).
+
+Set up the necessary permissions and security policies.
+
+Ensure all configurations follow standard access and security best practices.
+
+Once completed, take a screenshot of your terminal output as documentation.
+Push your changes and screenshot to a GitHub repository and share the link with the team for collaboration
 
 * * * * *
 
