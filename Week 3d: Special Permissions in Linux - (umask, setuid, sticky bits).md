@@ -1,7 +1,7 @@
 
 ---
 
-# Teaching Plan for Beginners: Linux File Permissions, Special Bits & ACLs.
+## Teaching Plan for Beginners: Linux File Permissions, Special Bits & ACLs.
 
 ---
 
